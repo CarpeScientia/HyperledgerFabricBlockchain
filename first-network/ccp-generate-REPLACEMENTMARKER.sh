@@ -13,6 +13,7 @@ function json_ccp {
         -e "s/\${CAPORT}/$4/" \
         -e "s#\${PEERPEM}#$PP#" \
         -e "s#\${CAPEM}#$CP#" \
+        -e "s/\${CHANNEL_NAME}/$CHANNEL_NAME/" \
         ccp-template-REPLACEMENTMARKER.json 
 }
 
@@ -25,6 +26,7 @@ function yaml_ccp {
         -e "s/\${CAPORT}/$4/" \
         -e "s#\${PEERPEM}#$PP#" \
         -e "s#\${CAPEM}#$CP#" \
+        -e "s/\${CHANNEL_NAME}/$CHANNEL_NAME/" \
         ccp-template-REPLACEMENTMARKER.yaml | sed -e $'s/\\\\n/\\\n        /g'
 }
 
